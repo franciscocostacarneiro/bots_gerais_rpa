@@ -381,3 +381,38 @@
 # pyautogui.click(1657,729, duration=0.5)
 # sleep(0.5)
 # pyautogui.alert(text="Login realizado com sucesso!", button="OK")
+
+##############################################################################
+
+# NOVO INTERVALO ENTRE UMA TIVIDADE E OUTRA - FUNÇÃO PAUSE
+
+# import pyauogui as pg
+
+# pg.PAUSE = 1 #Aqui estou definindo um intervalo de 1 segundo entre cada ação do PyAutoGUI
+
+# #Ou seja, agora não precisamos mais definir a cada atividade um sleep, pois o PyAutoGUI já fará isso automaticamente.
+
+# FORMA DE DEIXAR O TEMPO DE ESPERA ALEATÓRIO ENTRE AS ATIVIDADES
+# import random
+
+# pg.PAUSE =  random.randint(1,3) #Aqui estou definindo um intervalo aleatório entre 1 e 3 segundos entre cada ação do PyAutoGUI
+
+# FORMA DE CANCELAR A POSSIBILIDADE DE CANCELAR A AUTOMAÇÃO COM O MOVIMENTO DO MOUSE PARA O CANTO SUPERIOR ESQUERDO DA TELA
+# pg.FAILSAFE = False
+
+##############################################################################
+
+# # ZERANDO UM NOVO JOGO COM PYAUTOGUI
+
+# import pyautogui as pg
+# import random
+
+# #pg.PAUSE=random.randint(1,3)
+
+# # Mover o mouse até a posição
+# pg.moveTo(1632,549, duration=0.5)
+
+# for i in range(1001):
+#     pg.click()
+
+# pg.alert("The rock is gone!")
