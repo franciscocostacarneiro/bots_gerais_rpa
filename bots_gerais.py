@@ -416,3 +416,99 @@
 #     pg.click()
 
 # pg.alert("The rock is gone!")
+
+##############################################################################
+
+# RECONHECIMENTO DE IMAGEM COM OPENCV E PYAUTOGUI
+
+# # Como fazer reconhecimento de imagem simples
+# import pyautogui as pg
+
+# pg.PAUSE = 1
+# # Como encontrar algo na tela
+# # box = pg.locateOnScreen('5.png')
+# # print(box)
+# # ponto_central = pg.locateCenterOnScreen('5.png')
+# # print(ponto_central)
+# # if ponto_central:
+# #     pg.click(ponto_central,duration=2)
+# # Parãmetros avançados
+# '''
+# # confidence (0.0 a 1.0) 
+#    - Define o nível de similaridade necessário para considerar um match
+#    - 1.0 = match perfeito (100%)
+#    - 0.9 = 90% de similaridade (padrão recomendado)
+#    - 0.7 = 70% de similaridade (mais flexível)
+#    - ⚠️ REQUER: pip install opencv-python
+#    - 💡 Para aumentar chances de encontrar: reduza para 0.7-0.8
+# # grayscale (True/False)
+#    - True = Busca em escala de cinza (mais rápido, ~30%)
+#    - False = Busca colorida (padrão)
+#    - 💡 Use True se as cores não importam para identificação
+# # minSearchTime (segundos)
+#    - Tempo mínimo que o PyAutoGUI vai procurar antes de retornar None
+#    - Útil quando a imagem pode demorar para aparecer
+#    - Padrão: 0 (busca instantânea)
+# '''
+# ponto_central = pg.locateCenterOnScreen(
+#     'botao-captcha.png', # nome do arquivo
+#     confidence=0.70, # nível de confidence
+#     grayscale=False, # se deve usar grayscale
+#     minSearchTime=2
+# )
+# print(ponto_central)
+# if ponto_central:
+#     pg.click(ponto_central,duration=2)
+# # Como usar em automações e para quebrar captchas
+
+##############################################################################
+
+# BOT DE CURTIDAS NO INSTAGRAM
+
+# # Projeto de Automação do Instagram - Bot de curtidas
+# import pyautogui as pg
+# import pyperclip
+# from time import sleep
+
+# def write_pro(frase):
+#     pyperclip.copy(frase)
+#     pg.hotkey('ctrl', 'v')
+
+# pg.PAUSE = 2
+# # site - https://instaclone-devaprender.netlify.app/
+# # Seu desafio
+# # Logar no instagram - jhonatan / senha123
+# campo_usuario = pg.locateCenterOnScreen(
+#     'campo_usuario.png',
+#     confidence=0.70,
+#     minSearchTime=2
+#     )
+
+# pg.click(campo_usuario,duration=2)
+# pg.write('jhonatan')
+# pg.press('tab')
+# pg.write('senha123')
+# pg.press('tab')
+# pg.press('space')
+
+# sleep(5)
+# # clicar na primeira postagem
+# botao_comentar = pg.locateCenterOnScreen('botao_comentar.png',confidence=0.70,minSearchTime=2)
+# pg.click(botao_comentar,duration=2)
+
+# # clicar em curtir
+# botao_curtir = pg.locateCenterOnScreen('botao_curtir.png',confidence=0.70,minSearchTime=2)
+# pg.click(botao_curtir,duration=2)
+
+# # clicar em comentar
+# botao_comentar = pg.locateCenterOnScreen('botao_comentar.png',confidence=0.70,minSearchTime=2)
+# pg.click(botao_comentar,duration=2)
+
+# write_pro('bitcoin é demais!')
+
+# # clico  no botão de enviar o comentario
+# botao_enviar_comentario = pg.locateCenterOnScreen('botao_enviar_comentario.png',confidence=0.70,minSearchTime=2)
+# pg.click(botao_enviar_comentario,duration=2)
+# # curtir a foto
+# # deixar um comentário
+
